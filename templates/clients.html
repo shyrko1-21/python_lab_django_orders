@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title></head>
+<body>
+<h2>Clients</h2>
+{% if clients %}
+    <ul> {% for client in clients %}
+        <li><a href="/orders/{{ client.id }}/"> {{ client.client_name }} </a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No clients available</p>
+{% endif %}
+</body>
+</html>
