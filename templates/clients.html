@@ -1,9 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title></head>
-<body>
+{% extends 'base.html' %}
+{% block main %}
 <h2>Clients</h2>
 {% if clients %}
     <ul> {% for client in clients %}
@@ -13,5 +9,4 @@
 {% else %}
     <p>No clients available</p>
 {% endif %}
-</body>
-</html>
+{% endblock %}
