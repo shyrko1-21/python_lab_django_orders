@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% block main %}
+    {% if user.is_staff %}
+        <div class="card mb-3">
+            <div class="card-body">
+                <form action="../post_client/" method="post">
+                    {% csrf_token %}
+                    <h5>Add client:</h5>
+                    <div class="mb-3">
+                        <input class="form-control"
+                               placeholder="Client name"
+                               name="text"
+                               required/>
+                    </div>
+                    <div class="card mb-3">
+                        <div class="card-body" id="orders_new">
+                            <h6>Add orders:</h6>
+                            <div class="mb-3">
+                                <input class="form-control"
+                                       placeholder="description"
+                                       name="description"
+                                       required/>
+                            </div>
+                            <div class="mb-3">
+                                <input class="form-control"
+                                       placeholder="qty"
+                                       name="qty"
+                                       required/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <button class="btn btn-success" type="submit">
+                            Save
+                        </button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3">
+            <div class="card-body">
+                <h4 class="card-title">List of clients</h4>
+                {% if clients %}
+                    <ul> {% for client in clients %}
+                        <li><a href="/orders/{{ client.id }}/"> {{ client.client_name }} </a></li>
+                    {% endfor %}
+                    </ul>
+                {% else %}
+                    <p>No clients available</p>
+                {% endif %}
+            </div>
+        </div>
+
+    {% else %}
+        <h4>Access denied.</h4>
+    {% endif %}
+{% endblock %}
