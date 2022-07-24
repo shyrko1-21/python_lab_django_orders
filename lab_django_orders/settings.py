@@ -124,7 +124,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # настройка отправки почты -
 # параметры подключения к почтовому SMTP-серверу
 EMAIL_HOST = 'smtp.mail.ru'
-EMAIL_HOST_USER = 'forreg100@mail.ru'
-EMAIL_HOST_PASSWORD = 'bEqZvkgkNGDrDk2vVJDy'
+EMAIL_HOST_USER = '@mail.ru'
+EMAIL_HOST_PASSWORD = ''
 EMAIL_PORT = 465
 EMAIL_USE_SSL = True
